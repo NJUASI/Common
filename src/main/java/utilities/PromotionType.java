@@ -9,4 +9,6 @@ public enum PromotionType implements Serializable{
 	
 	//	网站促销策略
 	WEB_HOLIDAY, WEB__VIP_APPOINTED_CYCLE;
+	
+	
 }

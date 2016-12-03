@@ -9,16 +9,19 @@ public class SpecialSpanPromotionVO{
 
 	public String userID;
 	public PromotionType promotionType;
+	public String promotionName;	
 	public double discount;
 	public LocalDate startDate;
 	public LocalDate endDate;
 	
-	public SpecialSpanPromotionVO(SpecialSpanPromotionPO specialSpanPromotionVO) {
-		this.userID = specialSpanPromotionVO.getUserID();
-		this.promotionType = specialSpanPromotionVO.getPromotionType();
-		this.discount = specialSpanPromotionVO.getDiscount();
-		this.startDate = specialSpanPromotionVO.getStartDate();
-		this.endDate = specialSpanPromotionVO.getEndDate();
+	
+	public SpecialSpanPromotionVO(SpecialSpanPromotionPO specialSpanPromotionPO) {
+		this.userID = specialSpanPromotionPO.getUserID();
+		this.promotionType = specialSpanPromotionPO.getPromotionType();
+		this.promotionName = specialSpanPromotionPO.getPromotionName();
+		this.discount = specialSpanPromotionPO.getDiscount();
+		this.startDate = specialSpanPromotionPO.getStartDate();
+		this.endDate = specialSpanPromotionPO.getEndDate();
 	}
 
 }

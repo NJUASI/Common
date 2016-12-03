@@ -12,7 +12,7 @@ public class HotelFixedPromotionVO{
 	public HotelFixedPromotionVO(HotelFixedPromotionPO hotelFixedPromotion) {
 		this.hotelID = hotelFixedPromotion.getHotelID();
 		this.promotionType = hotelFixedPromotion.getPromotionType();
-		this.discount = hotelFixedPromotion.getDiscout();
+		this.discount = hotelFixedPromotion.getDiscount();
 	}
 
 }
