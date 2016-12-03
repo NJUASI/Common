@@ -2,9 +2,17 @@ package po;
 
 import java.io.Serializable;
 
-import vo.EvaluationVO;
+import vo.GuestEvaluationVO;
 
-public class EvaluationPO implements Serializable{
+/**
+ * 
+ * @author 61990
+ * lastChangedBy charles
+ * updateTime 2016/12/3
+ *
+ * 客户评价酒店时使用
+ */
+public class GuestEvaluationPO implements Serializable {
 
 	/**
 	 * 
@@ -20,13 +28,29 @@ public class EvaluationPO implements Serializable{
 	//	评价
 	private String comment;
 	
-	public EvaluationPO(String orderID, double score, String comment) {
+	/**
+	 * 
+	 * @author 61990
+	 * lastChangedBy 61990
+	 * updateTime 2016/11/29
+	 * 
+	 * 成员变量构造函数
+	 */
+	public GuestEvaluationPO(String orderID, double score, String comment) {
 		this.orderID = orderID;
 		this.score = score;
 		this.comment = comment;
 	}
 
-	public EvaluationPO(EvaluationVO evaluationVO) {
+	/**
+	 * 
+	 * @author 61990
+	 * lastChangedBy 61990
+	 * updateTime 2016/11/29
+	 * 
+	 * 根据PO创建VO
+	 */
+	public GuestEvaluationPO(GuestEvaluationVO evaluationVO) {
 		this.orderID = evaluationVO.orderID;
 		this.score = evaluationVO.score;
 		this.comment = evaluationVO.comment;
