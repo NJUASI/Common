@@ -15,6 +15,10 @@ public class HotelFixedPromotionPO {
 		this.discount = hotelFixedPromotionVO.discount;
 	}
 
+	public HotelFixedPromotionPO() {
+		// TODO 自动生成的构造函数存根
+	}
+
 	public String getHotelID() {
 		return hotelID;
 	}
@@ -31,12 +35,18 @@ public class HotelFixedPromotionPO {
 		this.promotionType = prmotionType;
 	}
 
-	public double getDiscout() {
+	public double getDiscount() {
 		return discount;
 	}
 
-	public void setDiscout(double discout) {
+	public void setDiscount(double discout) {
 		this.discount = discout;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "HotelFixedPromotionPO [hotelID=" + hotelID + ", promotionType=" + promotionType.toString() + ", discount="
+				+ discount + "]";
+	}
+
 }

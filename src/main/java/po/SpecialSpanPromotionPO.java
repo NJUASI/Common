@@ -9,9 +9,13 @@ public class SpecialSpanPromotionPO {
 
 	private String userID;
 	private PromotionType promotionType;
+	private String promotionName;
 	private double discount;
 	private LocalDate startDate;
 	private LocalDate endDate;
+	
+	public SpecialSpanPromotionPO() {
+	}
 	
 	public SpecialSpanPromotionPO(SpecialSpanPromotionVO specialSpanPromotionVO) {
 		this.userID = specialSpanPromotionVO.userID;
@@ -19,6 +23,7 @@ public class SpecialSpanPromotionPO {
 		this.discount = specialSpanPromotionVO.discount;
 		this.startDate = specialSpanPromotionVO.startDate;
 		this.endDate = specialSpanPromotionVO.endDate;
+		this.promotionName = specialSpanPromotionVO.promotionName;
 	}
 
 	public String getUserID() {
@@ -35,6 +40,15 @@ public class SpecialSpanPromotionPO {
 
 	public void setPromotionType(PromotionType promotionType) {
 		this.promotionType = promotionType;
+	}
+	
+
+	public String getPromotionName() {
+		return promotionName;
+	}
+
+	public void setPromotionName(String promotionName) {
+		this.promotionName = promotionName;
 	}
 
 	public double getDiscount() {

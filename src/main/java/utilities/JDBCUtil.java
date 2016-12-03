@@ -10,30 +10,41 @@ import java.util.Properties;
 
 
 public class JDBCUtil {
-	
+
 	static Properties pros = null;
-	
+
 	static {//只加载一次
 		pros = new Properties();
-		
+
 		try {
 			pros.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("dataBase.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static Connection getConnection(){
-			try {
-				Class.forName(pros.getProperty("mysqlDriver"));
-				return DriverManager.getConnection(pros.getProperty("mysqlURL"),
-						pros.getProperty("mysqlUser"),pros.getProperty("mysqlPassword"));
-			} catch (Exception e) {
-				e.printStackTrace();
-				return null;
-			}
+		try {
+			Class.forName(pros.getProperty("mysqlDriver"));
+			return DriverManager.getConnection(pros.getProperty("mysqlURL"),
+					pros.getProperty("mysqlUser"),pros.getProperty("mysqlPassword"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
-	
+
+	public static Connection getGongConnection(){
+		try {
+			Class.forName(pros.getProperty("gongDriver"));
+			return DriverManager.getConnection(pros.getProperty("gongURL"),
+					pros.getProperty("gongUser"),pros.getProperty("gongPassword"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 	public static void close(ResultSet rs, PreparedStatement ps, Connection conn){
 		try{
 			if(ps!=null){
@@ -42,7 +53,7 @@ public class JDBCUtil {
 		} catch (SQLException e){
 			e.printStackTrace();
 		}
-		
+
 		try{
 			if(rs!=null){
 				rs.close();
@@ -50,7 +61,7 @@ public class JDBCUtil {
 		} catch (SQLException e){
 			e.printStackTrace();
 		}
-		
+
 		try{
 			if(conn!=null){
 				conn.close();
@@ -59,7 +70,7 @@ public class JDBCUtil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void close(ResultSet rs, PreparedStatement ps){
 		try{
 			if(ps!=null){
@@ -68,7 +79,7 @@ public class JDBCUtil {
 		} catch (SQLException e){
 			e.printStackTrace();
 		}
-		
+
 		try{
 			if(rs!=null){
 				rs.close();
@@ -76,7 +87,7 @@ public class JDBCUtil {
 		} catch (SQLException e){
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }
